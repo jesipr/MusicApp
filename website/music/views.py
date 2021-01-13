@@ -5,11 +5,8 @@ from .models import Album
 
 def index(request):
     all_albums = Album.objects.all()
-    html = ''
-    for album in all_albums:
-        url = '/album/' + str(album.pk) + "/"
-        html += '<a href="' + url + '">' + album.album_title + '</a><br>'
-    return HttpResponse(html)
+    template = loader.get_template
+    return HttpResponse('')
 
 
 def detail(request, album_id):
